@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniAI Input Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='user_input_styles.css') }}">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <img src="{{ url_for('static', filename='images/UniAI.png') }}" alt="UniAI Logo" class="logo">
+        </header>        
+        <section class="info-section">
+            <div class="info-block">
+                <i class="icon examples-icon"></i>
+                <h2>Examples</h2>
+                <p>Generate vocabularies about animals</p>
+            </div>
+            <div class="info-block">
+                <i class="icon capabilities-icon"></i>
+                <h2>Capabilities</h2>
+                <p>Provides detailed explanations and engaging examples for each vocabularies.</p>
+            </div>
+            <div class="info-block">
+                <i class="icon limitations-icon"></i>
+                <h2>Limitations</h2>
+                <p>May occasionally generate incorrect information.</p>
+            </div>
+        </section>
+        <section class="input-section">
+            <form method="POST" class="question-form">
+                <select name="language" class="input-field">
+                    <option value="English">English</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Japanese">Japanese</option>
+                </select>
+                <select name="grade" class="input-field">
+                    <option value="Primary School">Primary School</option>
+                    <option value="Secondary School">Secondary School</option>
+                    <option value="Pre-University Level">Pre-University Level</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+                <select name="level" class="input-field">
+                    <option value="P1">P1</option>
+                    <option value="P2">P2</option>
+                    <option value="P3">P3</option>
+                    <option value="P4">P4</option>
+                    <option value="P5">P5</option>
+                    <option value="P6">P6</option>
+                </select>
+                <input type="text" name="topic" placeholder="Enter your topic" class="input-field topic-input" required>
+                <input type="number" name="amount" placeholder="Number of vocabularies" min="1" class="input-field amount-input" required>
+                <button type="submit" class="ask-button">Ask a question!</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

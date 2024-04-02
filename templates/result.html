@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='kids_styles.css') }}">
+    <style>
+        /* Include additional inline styles here or in your CSS file */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">UniAI Vocabulary Results</h1>
+        {% if result_html %}
+        <table class="vocab-table">
+            <thead>
+                <tr>
+                    <th>Vocabulary</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in result_html %}
+                <tr>
+                    <td>{{ item.Vocabulary }}</td>
+                    <td>{{ item.Definition }}</td>
+                    <td>{{ item.Example }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% elif error_message %}
+        <p class="error">Error: {{ error_message }}</p>
+        {% endif %}
+        <a href="/" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

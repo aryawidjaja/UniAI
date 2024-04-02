@@ -1,0 +1,67 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f9ff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    color: #0080ff;
+    text-align: center;
+}
+
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.vocab-table th, .vocab-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.vocab-table th {
+    background-color: #6ec1e4;
+    color: white;
+}
+
+.vocab-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.vocab-table tr:hover {
+    background-color: #ddf4ff;
+}
+
+.error {
+    color: #ff0000;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}

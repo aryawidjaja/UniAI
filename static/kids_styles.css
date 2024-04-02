@@ -1,0 +1,78 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #e0f7ff; /* Light blue background */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff; /* White background for the container */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Softer shadow for a lighter feel */
+}
+
+.title {
+    color: #0077ff; /* Bright blue color for the title */
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f0f8ff; /* Alice blue background for the table */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.vocab-table th, .vocab-table td {
+    text-align: left;
+    padding: 12px 20px;
+}
+
+.vocab-table thead {
+    background-color: #007bff; /* Bootstrap primary blue background for header */
+    color: #fff;
+    font-size: 24px;
+}
+
+.vocab-table tbody tr:nth-child(odd) {
+    background-color: #e7f3ff; /* Alternate rows a very light blue */
+}
+
+.vocab-table tbody tr:hover {
+    background-color: #d0e2ff; /* Light blue hover effect for rows */
+}
+
+.error {
+    color: #c70039; /* Keeping the error message in red for better visibility */
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.back-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 22px;
+    background-color: #007bff; /* Same blue as table header for consistency */
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056bf; /* Slightly darker blue on hover */
+    transform: translateY(-3px); /* Button lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}

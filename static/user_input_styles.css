@@ -1,0 +1,120 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff; /* Soft blue background */
+    color: #333; /* Dark text for readability */
+}
+
+.page-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-height: 100px; /* Adjust the size as needed */
+    margin-bottom: 20px;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.info-block {
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for info blocks */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-block h2 {
+    color: #379af1; /* Blue color for headings */
+}
+
+.info-block p {
+    color: #555; /* Slightly darker text for readability */
+}
+
+.input-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.question-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Makes sure padding doesn't affect width */
+}
+
+.topic-input {
+    flex-grow: 2; /* Allows topic input to take more space */
+}
+
+.ask-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #379af1; /* Bright blue */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ask-button:hover {
+    background-color: #007bff; /* Darker blue on hover */
+}
+
+.amount-input {
+    /* Style to match other input fields */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto; /* Or any specific width */
+    margin-right: 10px; /* To keep consistent spacing */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .logo {
+        display: none; /* Hides the logo on screens smaller than 768px */
+    }
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-block {
+        width: auto;
+    }
+
+    .question-form {
+        flex-direction: column;
+    }
+
+    .input-field,
+    .ask-button {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .topic-input {
+        flex-grow: 1; /* Reset flex-grow for mobile */
+    }
+}
