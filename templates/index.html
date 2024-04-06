@@ -56,5 +56,55 @@
             </form>
         </section>
     </div>
+    
+    <div id="resultsSection" style="display: none;">
+        <h2>Generated Vocabulary</h2>
+        <div id="vocabularyResults"></div>
+    </div>
+
+    <script>
+        document.querySelector('.question-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+        
+            fetch('/api/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result_html) {
+                    // Show the results section
+                    document.getElementById('resultsSection').style.display = 'block';
+        
+                    // Clear any previous results
+                    const resultsContainer = document.getElementById('vocabularyResults');
+                    resultsContainer.innerHTML = '';
+        
+                    // Iterate over each item in the result and append it to the results container
+                    data.result_html.forEach(item => {
+                        const vocabItem = document.createElement('div');
+                        vocabItem.innerHTML = `
+                            <h3>${item.Vocabulary}</h3>
+                            <p><strong>Definition:</strong> ${item.Definition}</p>
+                            <p><strong>Example:</strong> ${item.Example}</p>
+                        `;
+                        resultsContainer.appendChild(vocabItem);
+                    });
+                } else if (data.error_message) {
+                    console.error('Error:', data.error_message);
+                    // Optionally, display the error to the user
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally, display the error to the user
+            });
+        });
+    </script>                
 </body>
 </html>
